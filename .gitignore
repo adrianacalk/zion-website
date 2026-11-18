@@ -1,0 +1,5 @@
+# Files git should ignore (computer junk and tool folders)
+.DS_Store
+Thumbs.db
+node_modules/
+.netlify/

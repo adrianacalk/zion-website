@@ -1,0 +1,5 @@
+# Lets all search engines read the whole site.
+User-agent: *
+Allow: /
+
+Sitemap: https://zion-castroville.org/sitemap.xml

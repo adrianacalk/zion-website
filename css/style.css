@@ -1,0 +1,528 @@
+/* =====================================================================
+   Zion Lutheran Church, Castroville TX  -  the one stylesheet
+   ---------------------------------------------------------------------
+   Every page links to this file. Read it top to bottom:
+
+     1.  Colors, fonts and sizes (CSS variables)  <-- change colors HERE
+     2.  Basic reset and page defaults
+     3.  Layout helpers (sections, containers, columns, grids)
+     4.  Buttons and links
+     5.  Header and navigation menu
+     6.  Page title banner (inner pages)
+     7.  Home page: hero photo, green welcome strip, feature boxes
+     8.  Photos, captions, cards and highlight boxes
+     9.  Page-specific pieces (history, calendar, ham dinner, rummage,
+         give, contact)
+     10. Footer
+
+   A "variable" looks like  --red: #b3202a;  and is used elsewhere as
+   var(--red). Change the value once at the top and it changes
+   everywhere on the site.
+
+   "@media (max-width: 760px)" blocks hold the rules that only apply
+   on narrow screens (phones). Everything else applies everywhere.
+   ===================================================================== */
+
+
+/* =====================================================================
+   1. COLORS, FONTS AND SIZES
+   ===================================================================== */
+:root {
+  /* Colors */
+  --red: #b3202a;          /* main brand red: buttons, links, header line */
+  --red-dark: #8f1921;     /* darker red: page banners, hover states */
+  --green: #2e6b30;        /* green: welcome strip, Give band, accents */
+  --cream: #faf6ee;        /* soft background for alternating sections */
+  --white: #ffffff;
+  --ink: #2a2522;          /* main text color (near black) and footer */
+  --muted: #6b645e;        /* gray text: captions, small notes */
+  --line: #e4ddd0;         /* thin borders and divider lines */
+
+  /* Fonts (loaded from Google Fonts in each page's <head>) */
+  --font-heading: "Merriweather", Georgia, serif;
+  --font-body: "Open Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Sizes */
+  --max-width: 1040px;                   /* widest the content gets */
+  --gutter: clamp(16px, 3vw, 32px);      /* space at the left/right screen edges */
+  --tap: 44px;                           /* smallest comfortable finger target */
+  --radius: 8px;                         /* rounded corners on photos and boxes */
+}
+
+
+/* =====================================================================
+   2. BASIC RESET AND PAGE DEFAULTS
+   ===================================================================== */
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+p, ul, ol, dl, figure { margin: 0; }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  text-wrap: balance;
+}
+h2 { font-size: clamp(25px, 3.6vw, 32px); line-height: 1.3; }
+h3 { font-size: 20px; line-height: 1.35; }
+
+a { color: var(--red); }
+a:hover { color: var(--red-dark); }
+
+/* Photos never spill out of their box, and keep their shape */
+img { display: block; max-width: 100%; height: auto; }
+
+/* Visible outline when someone moves around with the keyboard */
+:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+
+/* "Skip to main content" link: hidden until a keyboard user tabs to it */
+.skip-link {
+  position: absolute; left: 8px; top: -60px; z-index: 100;
+  background: var(--white); padding: 10px 16px; border-radius: 6px; font-weight: 700;
+}
+.skip-link:focus { top: 8px; }
+
+
+/* =====================================================================
+   3. LAYOUT HELPERS
+   ===================================================================== */
+
+/* A "section" is a full-width horizontal band of the page.
+   Add  section--cream  for the cream background,
+        section--slim   for less top/bottom space,
+        section--green  for the green band (Give page). */
+.section { padding: 56px var(--gutter); background: var(--white); }
+.section--cream { background: var(--cream); }
+.section--slim { padding-top: 22px; padding-bottom: 22px; }
+
+/* "container" keeps content centered and no wider than --max-width */
+.container { max-width: var(--max-width); margin: 0 auto; display: grid; gap: 20px; }
+.container--roomy { gap: 40px; }   /* more space between the blocks inside */
+
+/* A simple vertical stack of things with even spacing */
+.stack { display: grid; gap: 16px; }
+
+.lead { font-size: 19px; max-width: 62ch; }               /* bigger intro paragraph */
+.note { font-size: 15px; color: var(--muted); }           /* small gray note */
+
+/* Two columns: photo on one side, text on the other.
+   Add  columns--photo-right  to put the photo on the right.
+   Add  columns--top  to line the columns up at the top. */
+.columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 40px; align-items: center; }
+.columns--photo-right > figure { order: 2; }
+.columns--top { align-items: start; }
+.columns__text { display: grid; gap: 16px; align-content: start; }
+
+/* Photo grids: 2 across, or 3 across with grid--three */
+.grid { display: grid; gap: 24px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+.grid--three img, .grid--square img { aspect-ratio: 1 / 1; }
+
+@media (max-width: 760px) {
+  .columns { grid-template-columns: 1fr; gap: 24px; }
+  .columns--photo-right > figure { order: 0; }   /* on phones the photo always comes first */
+}
+@media (max-width: 640px) {
+  .grid, .grid--three { grid-template-columns: 1fr; }
+}
+
+
+/* =====================================================================
+   4. BUTTONS AND LINKS
+   ===================================================================== */
+
+/* Red button.  Variations:
+     btn--outline  red outline, no fill
+     btn--ghost    white outline (for use on top of a photo)
+     btn--light    white button with green text (for the green band) */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 48px; padding: 0 22px; border-radius: 6px;
+  background: var(--red); color: #fff;
+  font: 600 17px/1.2 var(--font-body);
+  text-decoration: none; text-align: center;
+  border: 2px solid var(--red); cursor: pointer;
+}
+.btn:hover { background: var(--red-dark); border-color: var(--red-dark); color: #fff; }
+
+.btn--outline { background: transparent; color: var(--red); }
+.btn--outline:hover { background: var(--cream); color: var(--red-dark); }
+
+.btn--ghost { background: transparent; color: #fff; border-color: #fff; }
+.btn--ghost:hover { background: rgba(255, 255, 255, .16); border-color: #fff; }
+
+.btn--light { background: #fff; color: var(--green); border-color: #fff; }
+.btn--light:hover { background: var(--cream); border-color: var(--cream); color: var(--green); }
+
+/* A row of buttons that wraps onto new lines on small screens */
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.buttons--stacked { flex-direction: column; align-items: stretch; }
+
+/* Bold "Read more →" style text link */
+.more-link {
+  font-weight: 700; display: inline-flex; align-items: center;
+  min-height: var(--tap); text-underline-offset: 3px;
+}
+.links { display: flex; flex-wrap: wrap; column-gap: 18px; }   /* row of more-links */
+
+
+/* =====================================================================
+   5. HEADER AND NAVIGATION MENU
+   ---------------------------------------------------------------------
+   Wide screens: logo on the left, menu across the top; the About,
+   Ministries and Events menus drop down when you hover or click.
+   Narrow screens (980px and less): a "Menu" button opens the menu as a
+   list under the header (js/main.js does the opening and closing).
+   The current page's link has aria-current="page", which makes it red.
+   ===================================================================== */
+.site-header {
+  position: sticky; top: 0; z-index: 30;
+  background: var(--white);
+  border-bottom: 4px solid var(--red);
+  box-shadow: 0 2px 10px rgba(42, 37, 34, .06);
+}
+.site-header__inner {
+  max-width: var(--max-width); margin: 0 auto;
+  padding: 8px var(--gutter);
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.logo { display: block; flex: none; }
+.logo img { height: 68px; width: auto; }
+
+/* The "Menu" button (only shown on narrow screens) */
+.menu-toggle {
+  display: none; align-items: center; gap: 8px;
+  min-height: 48px; padding: 0 14px;
+  border: 2px solid var(--line); border-radius: 6px;
+  background: #fff; color: var(--ink);
+  font: 600 16px var(--font-body); cursor: pointer;
+}
+/* The three-bar "hamburger" icon drawn with borders */
+.menu-toggle__bars {
+  width: 22px; height: 16px; position: relative;
+  border-top: 2px solid currentColor; border-bottom: 2px solid currentColor;
+}
+.menu-toggle__bars::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 5px;
+  border-top: 2px solid currentColor;
+}
+
+/* The menu itself */
+.menu { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 2px; }
+.menu > li { position: relative; }
+.menu a, .menu button { font: 600 16px/1.2 var(--font-body); color: var(--ink); text-decoration: none; }
+.menu > li > a,
+.menu-parent {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 48px; padding: 0 11px;
+  background: none; border: 0; border-bottom: 3px solid transparent; cursor: pointer;
+}
+/* Little down-arrow after About / Ministries / Events */
+.menu-parent::after {
+  content: ""; width: 7px; height: 7px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: translateY(-3px) rotate(45deg);
+}
+.menu > li > a:hover, .menu-parent:hover { color: var(--red); }
+
+/* Current page (and the group it belongs to) shows in red, underlined */
+.menu > li > a[aria-current="page"],
+.menu-parent.is-current { color: var(--red); border-bottom-color: var(--red); }
+
+/* Dropdown lists */
+.submenu {
+  list-style: none; margin: 0; padding: 6px 0;
+  position: absolute; top: 100%; left: 0; min-width: 210px;
+  background: #fff;
+  border: 1px solid var(--line); border-top: 3px solid var(--red);
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 10px 24px rgba(42, 37, 34, .12);
+  display: none;
+}
+.menu > li:hover > .submenu,
+.menu > li:focus-within > .submenu,
+.menu > li.is-open > .submenu { display: block; }
+.submenu a { display: flex; align-items: center; min-height: 46px; padding: 0 18px; }
+.submenu a:hover { background: var(--cream); color: var(--red); }
+.submenu a[aria-current="page"] { color: var(--red); background: var(--cream); }
+
+/* Red "Plan a Visit" button at the end of the menu */
+.menu a.menu-cta {
+  margin-left: 10px; min-height: 46px; padding: 0 18px;
+  border-radius: 6px; background: var(--red); color: #fff; border: 0;
+}
+.menu a.menu-cta:hover { background: var(--red-dark); color: #fff; }
+
+/* ---- Narrow screens: menu becomes a drop-down list ---- */
+@media (max-width: 980px) {
+  .logo img { height: 56px; }
+  .menu-toggle { display: inline-flex; }
+  .main-nav {
+    display: none;
+    position: absolute; left: 0; right: 0; top: 100%;
+    background: #fff; border-bottom: 4px solid var(--red);
+    box-shadow: 0 14px 24px rgba(42, 37, 34, .14);
+    max-height: calc(100vh - 80px); overflow-y: auto;
+  }
+  .site-header.is-open .main-nav { display: block; }   /* js adds is-open */
+  .menu { flex-direction: column; align-items: stretch; gap: 0; padding: 8px var(--gutter) 20px; }
+  .menu > li { border-bottom: 1px solid var(--line); }
+  .menu > li > a, .menu-parent { width: 100%; padding: 0 4px; border-bottom: 0; font-size: 18px; }
+  .menu-parent { justify-content: space-between; }
+  .menu-parent::after { width: 9px; height: 9px; margin-right: 6px; }
+  .menu > li.is-open > .menu-parent::after { transform: translateY(2px) rotate(-135deg); }
+  .menu > li > a[aria-current="page"], .menu-parent.is-current { border-bottom: 0; }
+  .submenu { display: none; position: static; border: 0; box-shadow: none; padding: 0 0 8px; min-width: 0; }
+  .menu > li:hover > .submenu, .menu > li:focus-within > .submenu { display: none; }
+  .menu > li.is-open > .submenu { display: block; }
+  .submenu a { font-size: 18px; padding-left: 18px; }
+  .menu > li:last-child { border-bottom: 0; padding-top: 16px; }
+  .menu a.menu-cta { margin: 0; width: 100%; justify-content: center; }
+}
+
+
+/* =====================================================================
+   6. PAGE TITLE BANNER (top of every inner page)
+   ===================================================================== */
+.page-banner {
+  padding: 34px var(--gutter) 30px;
+  background: var(--red-dark); color: #fff;
+  border-bottom: 4px solid var(--green);
+}
+.page-banner .container { gap: 4px; }
+.page-banner__eyebrow {           /* small uppercase word above the title */
+  font-size: 15px; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: #f6e7d9;
+}
+.page-banner h1 { color: #fff; font-size: clamp(28px, 4.6vw, 40px); line-height: 1.2; }
+
+
+/* =====================================================================
+   7. HOME PAGE
+   ===================================================================== */
+
+/* ---- Hero: big steeple photo with the church name on top ---- */
+.hero {
+  position: relative; overflow: hidden;
+  min-height: 560px; display: grid; place-items: center;
+  padding: 72px var(--gutter);
+  text-align: center; color: #fff;
+  background-color: #2a1f1c;       /* shows while the photo loads */
+}
+.hero__photo {                     /* the photo fills the whole hero */
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.hero::before {                    /* dark tint over the photo so white text is readable */
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(rgba(20, 14, 12, .5), rgba(20, 14, 12, .68));
+}
+.hero__content { position: relative; z-index: 2; display: grid; gap: 18px; justify-items: center; max-width: 760px; }
+.hero h1 {
+  color: #fff; font-size: clamp(36px, 6.4vw, 60px); line-height: 1.15;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .35);
+}
+.hero__subtitle { font-size: 21px; }
+.hero__pill {                      /* the rounded "Sunday worship 10 am" label */
+  font-size: 17px; font-weight: 600; padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, .6); border-radius: 999px;
+  background: rgba(20, 14, 12, .25);
+}
+
+/* ---- Green welcome strip with Sunday times ---- */
+.welcome-strip { padding: 36px var(--gutter); background: var(--green); color: #fff; }
+.welcome-strip .container { grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); align-items: center; gap: 28px; }
+.welcome-strip h2 { color: #fff; font-size: 26px; }
+.welcome-strip h2 small { display: block; font: 400 17px/1.5 var(--font-body); color: #e6f0e4; margin-top: 4px; }
+.welcome-strip__times { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.welcome-strip__times li { border-left: 3px solid rgba(255, 255, 255, .55); padding-left: 14px; display: grid; }
+.welcome-strip__times b { font-family: var(--font-heading); font-size: 22px; }
+@media (max-width: 760px) {
+  .welcome-strip .container, .welcome-strip__times { grid-template-columns: 1fr; }
+}
+
+/* ---- Feature boxes (Home highlights, Give funds) ---- */
+.features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.feature {
+  background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--red);
+  border-radius: var(--radius); padding: 22px 22px 14px;
+  display: grid; gap: 12px; align-content: start; grid-template-rows: auto auto 1fr;
+}
+.feature:nth-child(2) { border-top-color: var(--green); }   /* middle box gets a green top */
+.feature__eyebrow { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.feature .links { align-self: end; }
+@media (max-width: 860px) { .features { grid-template-columns: 1fr; } }
+
+/* ---- Slim centered notice (pastor search) ---- */
+.notice { text-align: center; border-top: 1px solid var(--line); }
+.notice a { font-weight: 700; }
+
+
+/* =====================================================================
+   8. PHOTOS, CAPTIONS, CARDS AND HIGHLIGHT BOXES
+   ===================================================================== */
+
+/* A photo with an optional caption underneath.
+   photo--tall = portrait shape, photo--wide = landscape shape */
+.photo { display: grid; gap: 8px; }
+.photo img { width: 100%; border-radius: var(--radius); object-fit: cover; }
+.photo--tall img { aspect-ratio: 4 / 5; }
+.photo--wide img { aspect-ratio: 3 / 2; }
+.photo figcaption, .caption { font-size: 15px; color: var(--muted); text-align: center; }
+@media (max-width: 760px) { .photo--tall img { aspect-ratio: 4 / 3; } }
+
+/* List of times with lines between them (Worship page, Rummage page) */
+.times { list-style: none; padding: 0; border-top: 1px solid var(--line); }
+.times li { padding: 11px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.times b { color: var(--red); }
+.address { font-weight: 700; font-size: 18px; }
+
+/* Card: photo on top, words below (Get Involved page) */
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; display: grid; grid-template-rows: auto 1fr;
+}
+.card img { border-radius: 0; }
+.card__body { padding: 18px 20px 14px; display: grid; gap: 6px; align-content: start; }
+.card__title { font-size: 21px; }
+
+/* Cream box with a green left edge, for important news */
+.highlight {
+  background: var(--cream); border: 1px solid var(--line); border-left: 5px solid var(--green);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px; display: grid; gap: 12px; justify-items: start;
+}
+.highlight b { color: var(--green); }
+
+/* Same idea with a red left edge, for warnings / updates */
+.update {
+  background: var(--cream); border: 1px solid var(--line); border-left: 5px solid var(--red);
+  border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px;
+}
+.update b { color: var(--red); }
+
+
+/* =====================================================================
+   9. PAGE-SPECIFIC PIECES
+   ===================================================================== */
+
+/* ---- Our History: timeline ---- */
+.timeline { list-style: none; padding: 0; border-left: 3px solid var(--line); display: grid; gap: 12px; }
+.timeline li { position: relative; padding-left: 22px; display: grid; }
+.timeline li::before {             /* the dot on the line */
+  content: ""; position: absolute; left: -8px; top: 7px;
+  width: 13px; height: 13px; border-radius: 50%;
+  background: #fff; border: 3px solid var(--red);
+}
+.timeline li.is-future::before { background: var(--green); border-color: var(--green); }
+.timeline b { font-family: var(--font-heading); color: var(--red-dark); }
+.sources { font-size: 15px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+
+/* ---- Calendar: dashed placeholder box (remove once the real calendar is in) ---- */
+.calendar-placeholder {
+  min-height: 420px; border: 3px dashed #c9bfae; border-radius: var(--radius);
+  background: #fff; display: grid; place-items: center; text-align: center;
+  padding: 24px; color: var(--muted); font-size: 18px;
+}
+.calendar-placeholder b { font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+.calendar-embed { background: #fff; border-radius: var(--radius); }   /* wrapper for the real embed */
+
+/* ---- Ham Dinner ---- */
+.facts {                           /* "At a glance" two-column list */
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px;
+  border-top: 1px solid var(--line);
+}
+.facts li { padding: 12px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.facts b { color: var(--red); }
+.columns--menu { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
+.flyer { display: grid; gap: 8px; }
+.flyer a { display: block; cursor: zoom-in; }
+.flyer img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); }
+.flyer figcaption { font-size: 15px; color: var(--muted); text-align: center; }
+.tiles {                           /* "Stay all day" boxes */
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px;
+}
+.tiles li {
+  background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 14px 16px 8px; display: grid; gap: 4px; align-content: start;
+}
+.tiles b { font-family: var(--font-heading); }
+@media (max-width: 760px) {
+  .columns--menu { grid-template-columns: 1fr; }
+  .flyer { max-width: 380px; justify-self: center; }
+}
+
+/* ---- Rummage Sale ---- */
+.pair { display: grid; gap: 16px; align-items: start; }        /* two photos side by side */
+.pair--map { grid-template-columns: 2.9fr 1fr; }                /* wide map + narrow storefront */
+.pair--photos { grid-template-columns: 1.78fr 1fr; }
+.pair img { width: 100%; height: auto; border-radius: var(--radius); }
+.lists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.lists > div {
+  display: grid; gap: 8px; align-content: start;
+  background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 20px;
+}
+.lists ul { padding-left: 22px; display: grid; gap: 4px; }
+.golden-rule {                     /* the italic "give it to a friend" line */
+  font-family: var(--font-heading); font-style: italic; font-size: 20px;
+  text-align: center; padding: 18px 12px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+@media (max-width: 640px) {
+  .facts, .lists, .pair--map, .pair--photos { grid-template-columns: 1fr; }
+}
+
+/* ---- Give: green band ---- */
+.section--green { background: var(--green); color: #fff; }
+.section--green .container { justify-items: center; text-align: center; }
+.section--green .lead { font-size: 21px; }
+
+/* ---- Contact ---- */
+.contact { display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: start; }
+.contact dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 24px; font-size: 18px; }
+.contact dt { font-weight: 700; color: var(--muted); }
+.contact dd { margin: 0; }
+@media (max-width: 640px) {
+  .contact { grid-template-columns: 1fr; }
+  .contact dl { grid-template-columns: 1fr; gap: 0; }
+  .contact dd { margin-bottom: 10px; }
+}
+
+
+/* =====================================================================
+   10. FOOTER
+   ===================================================================== */
+.site-footer { background: var(--ink); color: #eee7dc; padding: 48px var(--gutter) 28px; font-size: 16px; }
+.site-footer__columns { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.site-footer h2 { color: #fff; font-size: 18px; margin-bottom: 8px; }
+.site-footer ul { list-style: none; padding: 0; display: grid; gap: 4px; }
+.site-footer a {
+  color: #fff; text-underline-offset: 3px;
+  display: inline-flex; align-items: center; min-height: var(--tap);
+}
+.site-footer a:hover { color: #f6d6d0; }
+.site-footer__copyright {
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  padding-top: 18px; margin-top: 12px;
+  font-size: 15px; color: #cfc6ba; text-align: center;
+}
+@media (max-width: 860px) { .site-footer__columns { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .site-footer__columns { grid-template-columns: 1fr; } }
