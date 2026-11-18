@@ -2,6 +2,11 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v1.1 — 2026-11-18
+- Bigger header logo so its text reads better: 100px tall on wide screens, 76px on phones
+  (`.logo img` in `css/style.css`). Trimmed the white border off `images/zion-logo-wide.png`.
+- "Plan a Visit" menu button stays on one line.
+
 ## v1.0 — 2026-11-18
 - First version of the static site: 11 pages (Home, Worship, Our History, Cemetery, Get Involved,
   Kids & Families, Calendar, Ham Dinner, Rummage Sale, Give, Contact) plus a 404 page.
