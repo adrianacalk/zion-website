@@ -11,8 +11,8 @@
      6.  Page title banner (inner pages)
      7.  Home page: hero photo, accent welcome strip, feature boxes
      8.  Photos, captions, cards and highlight boxes
-     9.  Page-specific pieces (history, calendar, ham dinner, rummage,
-         give, contact)
+     9.  Page-specific pieces (jump lists, history, faith, calendar,
+         ham dinner, rummage, give, contact)
      10. Footer
 
    A "variable" looks like  --primary: #1f4e8c;  and is used elsewhere as
@@ -112,6 +112,8 @@ img { display: block; max-width: 100%; height: auto; }
 /* "container" keeps content centered and no wider than --max-width */
 .container { max-width: var(--max-width); margin: 0 auto; display: grid; gap: 20px; }
 .container--roomy { gap: 40px; }   /* more space between the blocks inside */
+.container--narrow > * { max-width: 760px; }   /* text-only sections: shorter lines read easier,
+                                                  still lined up on the left with the rest of the page */
 
 /* A simple vertical stack of things with even spacing */
 .stack { display: grid; gap: 16px; }
@@ -184,8 +186,8 @@ img { display: block; max-width: 100%; height: auto; }
 /* =====================================================================
    5. HEADER AND NAVIGATION MENU
    ---------------------------------------------------------------------
-   Wide screens: logo on the left, menu across the top; the About,
-   Ministries and Events menus drop down when you hover or click.
+   Wide screens: logo on the left, menu across the top; the About
+   and Events menus drop down when you hover or click.
    Narrow screens (980px and less): a "Menu" button opens the menu as a
    list under the header (js/main.js does the opening and closing).
    The current page's link has aria-current="page", which makes it blue.
@@ -232,7 +234,7 @@ img { display: block; max-width: 100%; height: auto; }
   min-height: 48px; padding: 0 11px;
   background: none; border: 0; border-bottom: 3px solid transparent; cursor: pointer;
 }
-/* Little down-arrow after About / Ministries / Events */
+/* Little down-arrow after About / Events */
 .menu-parent::after {
   content: ""; width: 7px; height: 7px;
   border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
@@ -261,13 +263,8 @@ img { display: block; max-width: 100%; height: auto; }
 .submenu a:hover { background: var(--cream); color: var(--primary); }
 .submenu a[aria-current="page"] { color: var(--primary); background: var(--cream); }
 
-/* Blue "Plan a Visit" button at the end of the menu */
-.menu a.menu-cta {
-  margin-left: 10px; min-height: 46px; padding: 0 18px;
-  border-radius: 6px; background: var(--primary); color: #fff; border: 0;
-  white-space: nowrap;   /* keep "Plan a Visit" on one line */
-}
-.menu a.menu-cta:hover { background: var(--primary-dark); color: #fff; }
+/* Keep two-word menu items like "Plan a Visit" on one line */
+.menu a { white-space: nowrap; }
 
 /* ---- Narrow screens: menu becomes a drop-down list ---- */
 @media (max-width: 980px) {
@@ -292,8 +289,7 @@ img { display: block; max-width: 100%; height: auto; }
   .menu > li:hover > .submenu, .menu > li:focus-within > .submenu { display: none; }
   .menu > li.is-open > .submenu { display: block; }
   .submenu a { font-size: 18px; padding-left: 18px; }
-  .menu > li:last-child { border-bottom: 0; padding-top: 16px; }
-  .menu a.menu-cta { margin: 0; width: 100%; justify-content: center; }
+  .menu > li:last-child { border-bottom: 0; }
 }
 
 
@@ -422,6 +418,24 @@ img { display: block; max-width: 100%; height: auto; }
    9. PAGE-SPECIFIC PIECES
    ===================================================================== */
 
+/* ---- Jump list (Plan a Visit, Ministries): a row of rounded links at the
+        top of a long page, each jumping down to a section with that id ---- */
+.jump-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.jump-list a {
+  display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 14px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 999px;
+  font-size: 15px; font-weight: 600; text-decoration: none;
+}
+.jump-list a:hover { border-color: var(--primary); }
+/* When a jump-list link is clicked, stop the section just below the sticky header
+   (the header is about 120px tall on wide screens, 96px on phones) */
+.section[id] { scroll-margin-top: 124px; }
+@media (max-width: 980px) { .section[id] { scroll-margin-top: 100px; } }
+
+/* ---- Faith: numbered statement of faith ---- */
+.faith-list { padding-left: 24px; display: grid; gap: 12px; }
+.faith-list li::marker { font-family: var(--font-heading); font-weight: 700; color: var(--primary); }
+
 /* ---- Our History: timeline ---- */
 .timeline { list-style: none; padding: 0; border-left: 3px solid var(--line); display: grid; gap: 12px; }
 .timeline li { position: relative; padding-left: 22px; display: grid; }
@@ -496,7 +510,7 @@ img { display: block; max-width: 100%; height: auto; }
 .section--accent .container { justify-items: center; text-align: center; }
 .section--accent .lead { font-size: 21px; }
 
-/* ---- Contact ---- */
+/* ---- Contact box (Plan a Visit page, "Contact the office" section) ---- */
 .contact { display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: start; }
 .contact dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 24px; font-size: 18px; }
 .contact dt { font-weight: 700; color: var(--muted); }

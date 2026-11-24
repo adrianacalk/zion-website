@@ -2,6 +2,20 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.0 — 2026-11-24
+- New menu: Home · Plan a Visit · Ministries · About ▾ (Team, Faith, History, Sermons) ·
+  Events ▾ (Calendar, VBS, Ham Dinner, Rummage Sale) · Give. The separate "Plan a Visit"
+  button is gone (Plan a Visit is now a regular menu item); Contact moved into Plan a Visit.
+- New pages: `plan-a-visit.html` and `ministries.html` (long pages with a jump list at the top),
+  `team.html`, `faith.html`, `sermons.html`, `vbs.html`.
+- Removed `worship.html`, `contact.html`, `get-involved.html`, `kids.html`, `cemetery.html`;
+  their content now lives in Plan a Visit, Ministries and VBS. All links updated.
+- New wording drawn from the current zion-castroville.org pages (team names, statement of faith,
+  LCMC, library, Alpha, Lent & Easter, VBS details), kept short. Missing details marked `TODO`.
+- Missions grant application PDF added in a new `docs/` folder.
+- CSS: jump list, narrow text sections, Faith list; removed the old menu button style.
+- Updated `sitemap.xml`, README, cheat sheet and AI briefs for the new pages.
+
 ## v1.2 — 2026-11-24
 - Luther Rose colors: blue `#1f4e8c` (main) and red `#b3202a` (accent).
 - Color variables renamed by role: `--primary`, `--primary-dark`, `--accent`

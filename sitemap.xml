@@ -3,46 +3,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zion-castroville.org/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
-    <loc>https://zion-castroville.org/worship.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <loc>https://zion-castroville.org/plan-a-visit.html</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://zion-castroville.org/ministries.html</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://zion-castroville.org/team.html</loc>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://zion-castroville.org/faith.html</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://zion-castroville.org/history.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
-    <loc>https://zion-castroville.org/cemetery.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://zion-castroville.org/get-involved.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://zion-castroville.org/kids.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <loc>https://zion-castroville.org/sermons.html</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://zion-castroville.org/calendar.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-24</lastmod>
+  </url>
+  <url>
+    <loc>https://zion-castroville.org/vbs.html</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://zion-castroville.org/ham-dinner.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://zion-castroville.org/rummage-sale.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://zion-castroville.org/give.html</loc>
-    <lastmod>2026-11-18</lastmod>
-  </url>
-  <url>
-    <loc>https://zion-castroville.org/contact.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-24</lastmod>
   </url>
 </urlset>

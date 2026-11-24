@@ -21,26 +21,44 @@ VS Code or Cursor), change, save, and look at in your web browser.
 | File | What it is |
 |---|---|
 | `index.html` | Home page (steeple photo, Sunday times, three highlight boxes, pastor search notice) |
-| `worship.html` | Worship / Plan a Visit (Sunday times, directions, Facebook Live) |
-| `history.html` | Our History (stone church, timeline, today, sources) |
-| `cemetery.html` | Zion Lutheran Cemetery |
-| `get-involved.html` | Get Involved (choirs, bell choir, food pantry, fellowship) |
-| `kids.html` | Kids & Families (Sunday School, VBS) |
-| `calendar.html` | Calendar (placeholder for the Church Center calendar) |
-| `ham-dinner.html` | Ham Dinner Sunday |
-| `rummage-sale.html` | Rummage Sale |
+| `plan-a-visit.html` | Plan a Visit: Sunday schedule, map, parking, worship style, children, livestream, sermons, Advent & Christmas, Lent & Easter, office contact. Jump list at the top. |
+| `ministries.html` | Ministries: youth, adult Sunday School, Ladies' Bible Study, fellowship, Altar Guild, choirs, facilities, cemetery, library, Alpha, food pantry, missions grant. Jump list at the top. |
+| `team.html` | About > Team (pastor search, ministry team, office) |
+| `faith.html` | About > Faith (mission, statement of faith, LCMC) |
+| `history.html` | About > History (stone church, timeline, today, sources) |
+| `sermons.html` | About > Sermons (YouTube and Facebook Live links) |
+| `calendar.html` | Events > Calendar (placeholder for the Church Center calendar) |
+| `vbs.html` | Events > Vacation Bible School |
+| `ham-dinner.html` | Events > Ham Dinner Sunday |
+| `rummage-sale.html` | Events > Rummage Sale |
 | `give.html` | Give (Church Center giving link, funds) |
-| `contact.html` | Contact Us |
 | `404.html` | "Page not found" page the web host shows for a wrong address |
 | `css/style.css` | The one stylesheet: all colors, fonts, spacing and layout. Colors are at the very top. |
 | `js/main.js` | A few lines of JavaScript: opens the phone menu and the drop-downs, and sets the footer year. |
 | `images/` | Every photo and the logo. |
+| `docs/` | Files people can download (the missions grant application PDF). |
 | `sitemap.xml` | List of pages for Google. Add a line if you add a page. |
 | `robots.txt` | Tells search engines they may read the whole site. |
 | `EDITING-CHEATSHEET.md` | One page of common edits with exact examples. |
 | `CLAUDE.md`, `.cursor/rules/zion-site.mdc` | Instructions for AI helpers (Claude, Cursor). Same text in both. |
 | `CHANGELOG.md` | A short diary of what changed and when. |
 | `.gitignore` | Tells git which junk files to ignore. |
+
+### The menu
+
+Home · Plan a Visit · Ministries · About ▾ (Team, Faith, History, Sermons) ·
+Events ▾ (Calendar, VBS, Ham Dinner, Rummage Sale) · Give
+
+The menu is part of the header, so a menu change goes in every page (see below).
+A menu item that is one page is a plain link; only About and Events have drop-downs.
+
+### Jump lists on long pages
+
+`plan-a-visit.html` and `ministries.html` start with a row of rounded links (the "jump list").
+Each link like `<a href="#parking">Parking</a>` jumps to the section with `id="parking"`.
+To add a section: copy a whole `<section ... id="...">` block, give it a new id,
+and add a matching link to the jump list. Other pages can link straight to a section too,
+for example `ministries.html#cemetery`.
 
 ### How a page is laid out
 
@@ -54,7 +72,7 @@ FOOTER              address, contact, Sunday times (identical on every page)
 ```
 
 **The header and footer are copied into every page.** If you change one
-(say, new office hours in the footer), make the same change in all 12 `.html`
+(say, new office hours in the footer), make the same change in all 13 `.html`
 files. Find & Replace across files (VS Code / Cursor: Ctrl+Shift+H, Mac Cmd+Shift+H)
 makes that quick.
 
@@ -71,7 +89,7 @@ After you edit and save a file, press Refresh (F5, or Cmd+R on a Mac) in the bro
 
 ## Edit words
 
-1. Open the page in your editor (for example `worship.html`).
+1. Open the page in your editor (for example `plan-a-visit.html`).
 2. Use Find (Ctrl+F) to locate the words you want to change.
 3. Change only the words between the tags. For example, in
    `<p>Come as you are.</p>` change `Come as you are.` and leave `<p>` and `</p>` alone.
@@ -192,8 +210,9 @@ git push
 
 These are marked in the pages with `<!-- TODO: ... -->` comments. Search for `TODO` to find them.
 
-- [ ] **VBS registration link** (`kids.html`): the "Register for VBS" button has `href="#"`.
+- [ ] **VBS registration link** (`vbs.html`): the "Register for VBS" button has `href="#"`.
       Paste the Planning Center (Church Center) Registrations signup link in its place.
+      Also confirm the 2027 dates and the 9 am to 1 pm time (the old site said "TBD").
 - [ ] **Church Center calendar** (`calendar.html`): replace the dashed placeholder box with the
       Planning Center embed code (instructions are in the comment right above the box).
 - [ ] **Verify the Ham Dinner date** (`ham-dinner.html`): check the 2026 date against the 2026 flyer,
@@ -203,8 +222,16 @@ These are marked in the pages with `<!-- TODO: ... -->` comments. Search for `TO
       "on Fiorella Street". Confirm, and check the arrow on `images/rummage-map.jpg`.
 - [ ] **Verify the band name** (`ham-dinner.html`): "2026: the Joyful Noise band".
 - [ ] **Social links for Google** (`index.html`): optional "sameAs" line in the schema.org block (see its comment).
+- [ ] **Plan a Visit details** (`plan-a-visit.html`): parking and accessible entrance; optional
+      Communion and first-visit note; nursery or quiet room; 2027 Lent and Easter dates.
+- [ ] **Ministries details** (`ministries.html`): youth group (if any); Ladies' Bible Study; Altar Guild;
+      choir rehearsal times; whether facilities can be used or rented; next Alpha; food pantry needs.
+- [ ] **Team** (`team.html`): other council members, office staff, interim or supply pastor;
+      check that every name listed is still current.
+- [ ] **Sermons** (`sermons.html`, optional): paste a YouTube embed of the newest sermon.
 - [ ] **Google Analytics ID**: replace `G-XXXXXXXXXX` (see above).
 - [ ] **Domain**: confirm the site will live at https://zion-castroville.org (see the note at the top of this file).
 
-Seasonal reminders (not TODOs): the Advent & Christmas 2026 box appears on `index.html`
-and `calendar.html`; update or remove it after Christmas. The pastor search notice is on `index.html`.
+Seasonal reminders (not TODOs): the Advent & Christmas 2026 box appears on `index.html`,
+`calendar.html` and `plan-a-visit.html`; update or remove it after Christmas. The pastor search
+notice is on `index.html` and `team.html`. Update the Lent & Easter dates on `plan-a-visit.html` each year.

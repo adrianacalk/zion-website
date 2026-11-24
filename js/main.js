@@ -3,7 +3,7 @@
    ---------------------------------------------------------------------
    It does three small things:
      1. Opens and closes the menu on phones (the "Menu" button).
-     2. Opens and closes the About / Ministries / Events drop-downs
+     2. Opens and closes the About / Events drop-downs
         when they are clicked or tapped.
      3. Puts the current year in the footer copyright line.
    The site still shows all its content if this file fails to load.
@@ -30,7 +30,7 @@
     menuButton.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
-  /* 2. Drop-downs: clicking About / Ministries / Events opens that group */
+  /* 2. Drop-downs: clicking About / Events opens that group */
   for (var i = 0; i < groupButtons.length; i++) {
     groupButtons[i].addEventListener("click", function () {
       var button = this;
