@@ -21,7 +21,7 @@ Menu: Home · Worship · About (Our History, Cemetery) · Ministries (Get Involv
 Events (Calendar, Ham Dinner, Rummage Sale) · Give · Contact · "Plan a Visit" button (worship.html).
 
 ## Style tokens (defined in `css/style.css` `:root`)
-- `--red #b3202a` · `--red-dark #8f1921` · `--green #2e6b30` · `--cream #faf6ee` · `--white #ffffff`
+- `--primary #1f4e8c` (Luther Rose blue) · `--primary-dark #173b6b` · `--accent #b3202a` (Luther Rose red) · `--cream #faf6ee` · `--white #ffffff`
 - `--ink #2a2522` (text) · `--muted #6b645e` (captions) · `--line #e4ddd0` (borders)
 - Fonts: Merriweather (headings, `--font-heading`), Open Sans (body, `--font-body`), from Google Fonts
 - `--max-width 1040px`; body text 17px

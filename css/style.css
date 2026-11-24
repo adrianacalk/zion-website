@@ -9,14 +9,14 @@
      4.  Buttons and links
      5.  Header and navigation menu
      6.  Page title banner (inner pages)
-     7.  Home page: hero photo, green welcome strip, feature boxes
+     7.  Home page: hero photo, accent welcome strip, feature boxes
      8.  Photos, captions, cards and highlight boxes
      9.  Page-specific pieces (history, calendar, ham dinner, rummage,
          give, contact)
      10. Footer
 
-   A "variable" looks like  --red: #b3202a;  and is used elsewhere as
-   var(--red). Change the value once at the top and it changes
+   A "variable" looks like  --primary: #1f4e8c;  and is used elsewhere as
+   var(--primary). Change the value once at the top and it changes
    everywhere on the site.
 
    "@media (max-width: 760px)" blocks hold the rules that only apply
@@ -29,9 +29,9 @@
    ===================================================================== */
 :root {
   /* Colors */
-  --red: #b3202a;          /* main brand red: buttons, links, header line */
-  --red-dark: #8f1921;     /* darker red: page banners, hover states */
-  --green: #2e6b30;        /* green: welcome strip, Give band, accents */
+  --primary: #1f4e8c;      /* Luther Rose blue: buttons, links, header line */
+  --primary-dark: #173b6b; /* darker blue: page banners, hover states */
+  --accent: #b3202a;       /* Luther Rose red: welcome strip, Give band, accents */
   --cream: #faf6ee;        /* soft background for alternating sections */
   --white: #ffffff;
   --ink: #2a2522;          /* main text color (near black) and footer */
@@ -80,14 +80,14 @@ h1, h2, h3 {
 h2 { font-size: clamp(25px, 3.6vw, 32px); line-height: 1.3; }
 h3 { font-size: 20px; line-height: 1.35; }
 
-a { color: var(--red); }
-a:hover { color: var(--red-dark); }
+a { color: var(--primary); }
+a:hover { color: var(--primary-dark); }
 
 /* Photos never spill out of their box, and keep their shape */
 img { display: block; max-width: 100%; height: auto; }
 
 /* Visible outline when someone moves around with the keyboard */
-:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
 /* "Skip to main content" link: hidden until a keyboard user tabs to it */
 .skip-link {
@@ -104,7 +104,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* A "section" is a full-width horizontal band of the page.
    Add  section--cream  for the cream background,
         section--slim   for less top/bottom space,
-        section--green  for the green band (Give page). */
+        section--accent  for the accent band (Give page). */
 .section { padding: 56px var(--gutter); background: var(--white); }
 .section--cream { background: var(--cream); }
 .section--slim { padding-top: 22px; padding-bottom: 22px; }
@@ -146,28 +146,28 @@ img { display: block; max-width: 100%; height: auto; }
    4. BUTTONS AND LINKS
    ===================================================================== */
 
-/* Red button.  Variations:
-     btn--outline  red outline, no fill
+/* Main (blue) button.  Variations:
+     btn--outline  blue outline, no fill
      btn--ghost    white outline (for use on top of a photo)
-     btn--light    white button with green text (for the green band) */
+     btn--light    white button with accent text (for the accent band) */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   min-height: 48px; padding: 0 22px; border-radius: 6px;
-  background: var(--red); color: #fff;
+  background: var(--primary); color: #fff;
   font: 600 17px/1.2 var(--font-body);
   text-decoration: none; text-align: center;
-  border: 2px solid var(--red); cursor: pointer;
+  border: 2px solid var(--primary); cursor: pointer;
 }
-.btn:hover { background: var(--red-dark); border-color: var(--red-dark); color: #fff; }
+.btn:hover { background: var(--primary-dark); border-color: var(--primary-dark); color: #fff; }
 
-.btn--outline { background: transparent; color: var(--red); }
-.btn--outline:hover { background: var(--cream); color: var(--red-dark); }
+.btn--outline { background: transparent; color: var(--primary); }
+.btn--outline:hover { background: var(--cream); color: var(--primary-dark); }
 
 .btn--ghost { background: transparent; color: #fff; border-color: #fff; }
 .btn--ghost:hover { background: rgba(255, 255, 255, .16); border-color: #fff; }
 
-.btn--light { background: #fff; color: var(--green); border-color: #fff; }
-.btn--light:hover { background: var(--cream); border-color: var(--cream); color: var(--green); }
+.btn--light { background: #fff; color: var(--accent); border-color: #fff; }
+.btn--light:hover { background: var(--cream); border-color: var(--cream); color: var(--accent); }
 
 /* A row of buttons that wraps onto new lines on small screens */
 .buttons { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
@@ -188,12 +188,12 @@ img { display: block; max-width: 100%; height: auto; }
    Ministries and Events menus drop down when you hover or click.
    Narrow screens (980px and less): a "Menu" button opens the menu as a
    list under the header (js/main.js does the opening and closing).
-   The current page's link has aria-current="page", which makes it red.
+   The current page's link has aria-current="page", which makes it blue.
    ===================================================================== */
 .site-header {
   position: sticky; top: 0; z-index: 30;
   background: var(--white);
-  border-bottom: 4px solid var(--red);
+  border-bottom: 4px solid var(--primary);
   box-shadow: 0 2px 10px rgba(42, 37, 34, .06);
 }
 .site-header__inner {
@@ -238,18 +238,18 @@ img { display: block; max-width: 100%; height: auto; }
   border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
   transform: translateY(-3px) rotate(45deg);
 }
-.menu > li > a:hover, .menu-parent:hover { color: var(--red); }
+.menu > li > a:hover, .menu-parent:hover { color: var(--primary); }
 
-/* Current page (and the group it belongs to) shows in red, underlined */
+/* Current page (and the group it belongs to) shows in blue, underlined */
 .menu > li > a[aria-current="page"],
-.menu-parent.is-current { color: var(--red); border-bottom-color: var(--red); }
+.menu-parent.is-current { color: var(--primary); border-bottom-color: var(--primary); }
 
 /* Dropdown lists */
 .submenu {
   list-style: none; margin: 0; padding: 6px 0;
   position: absolute; top: 100%; left: 0; min-width: 210px;
   background: #fff;
-  border: 1px solid var(--line); border-top: 3px solid var(--red);
+  border: 1px solid var(--line); border-top: 3px solid var(--primary);
   border-radius: 0 0 6px 6px;
   box-shadow: 0 10px 24px rgba(42, 37, 34, .12);
   display: none;
@@ -258,16 +258,16 @@ img { display: block; max-width: 100%; height: auto; }
 .menu > li:focus-within > .submenu,
 .menu > li.is-open > .submenu { display: block; }
 .submenu a { display: flex; align-items: center; min-height: 46px; padding: 0 18px; }
-.submenu a:hover { background: var(--cream); color: var(--red); }
-.submenu a[aria-current="page"] { color: var(--red); background: var(--cream); }
+.submenu a:hover { background: var(--cream); color: var(--primary); }
+.submenu a[aria-current="page"] { color: var(--primary); background: var(--cream); }
 
-/* Red "Plan a Visit" button at the end of the menu */
+/* Blue "Plan a Visit" button at the end of the menu */
 .menu a.menu-cta {
   margin-left: 10px; min-height: 46px; padding: 0 18px;
-  border-radius: 6px; background: var(--red); color: #fff; border: 0;
+  border-radius: 6px; background: var(--primary); color: #fff; border: 0;
   white-space: nowrap;   /* keep "Plan a Visit" on one line */
 }
-.menu a.menu-cta:hover { background: var(--red-dark); color: #fff; }
+.menu a.menu-cta:hover { background: var(--primary-dark); color: #fff; }
 
 /* ---- Narrow screens: menu becomes a drop-down list ---- */
 @media (max-width: 980px) {
@@ -276,7 +276,7 @@ img { display: block; max-width: 100%; height: auto; }
   .main-nav {
     display: none;
     position: absolute; left: 0; right: 0; top: 100%;
-    background: #fff; border-bottom: 4px solid var(--red);
+    background: #fff; border-bottom: 4px solid var(--primary);
     box-shadow: 0 14px 24px rgba(42, 37, 34, .14);
     max-height: calc(100vh - 80px); overflow-y: auto;
   }
@@ -302,8 +302,8 @@ img { display: block; max-width: 100%; height: auto; }
    ===================================================================== */
 .page-banner {
   padding: 34px var(--gutter) 30px;
-  background: var(--red-dark); color: #fff;
-  border-bottom: 4px solid var(--green);
+  background: var(--primary-dark); color: #fff;
+  border-bottom: 4px solid var(--accent);
 }
 .page-banner .container { gap: 4px; }
 .page-banner__eyebrow {           /* small uppercase word above the title */
@@ -345,8 +345,8 @@ img { display: block; max-width: 100%; height: auto; }
   background: rgba(20, 14, 12, .25);
 }
 
-/* ---- Green welcome strip with Sunday times ---- */
-.welcome-strip { padding: 36px var(--gutter); background: var(--green); color: #fff; }
+/* ---- Accent (red) welcome strip with Sunday times ---- */
+.welcome-strip { padding: 36px var(--gutter); background: var(--accent); color: #fff; }
 .welcome-strip .container { grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); align-items: center; gap: 28px; }
 .welcome-strip h2 { color: #fff; font-size: 26px; }
 .welcome-strip h2 small { display: block; font: 400 17px/1.5 var(--font-body); color: #e6f0e4; margin-top: 4px; }
@@ -360,11 +360,11 @@ img { display: block; max-width: 100%; height: auto; }
 /* ---- Feature boxes (Home highlights, Give funds) ---- */
 .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 .feature {
-  background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--red);
+  background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--primary);
   border-radius: var(--radius); padding: 22px 22px 14px;
   display: grid; gap: 12px; align-content: start; grid-template-rows: auto auto 1fr;
 }
-.feature:nth-child(2) { border-top-color: var(--green); }   /* middle box gets a green top */
+.feature:nth-child(2) { border-top-color: var(--accent); }   /* middle box gets a red top */
 .feature__eyebrow { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .feature .links { align-self: end; }
 @media (max-width: 860px) { .features { grid-template-columns: 1fr; } }
@@ -390,7 +390,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* List of times with lines between them (Worship page, Rummage page) */
 .times { list-style: none; padding: 0; border-top: 1px solid var(--line); }
 .times li { padding: 11px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
-.times b { color: var(--red); }
+.times b { color: var(--primary); }
 .address { font-weight: 700; font-size: 18px; }
 
 /* Card: photo on top, words below (Get Involved page) */
@@ -402,20 +402,20 @@ img { display: block; max-width: 100%; height: auto; }
 .card__body { padding: 18px 20px 14px; display: grid; gap: 6px; align-content: start; }
 .card__title { font-size: 21px; }
 
-/* Cream box with a green left edge, for important news */
+/* Cream box with an accent (red) left edge, for important news */
 .highlight {
-  background: var(--cream); border: 1px solid var(--line); border-left: 5px solid var(--green);
+  background: var(--cream); border: 1px solid var(--line); border-left: 5px solid var(--accent);
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 16px 20px; display: grid; gap: 12px; justify-items: start;
 }
-.highlight b { color: var(--green); }
+.highlight b { color: var(--accent); }
 
-/* Same idea with a red left edge, for warnings / updates */
+/* Same idea with a blue left edge, for warnings / updates */
 .update {
-  background: var(--cream); border: 1px solid var(--line); border-left: 5px solid var(--red);
+  background: var(--cream); border: 1px solid var(--line); border-left: 5px solid var(--primary);
   border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px;
 }
-.update b { color: var(--red); }
+.update b { color: var(--primary); }
 
 
 /* =====================================================================
@@ -428,10 +428,10 @@ img { display: block; max-width: 100%; height: auto; }
 .timeline li::before {             /* the dot on the line */
   content: ""; position: absolute; left: -8px; top: 7px;
   width: 13px; height: 13px; border-radius: 50%;
-  background: #fff; border: 3px solid var(--red);
+  background: #fff; border: 3px solid var(--primary);
 }
-.timeline li.is-future::before { background: var(--green); border-color: var(--green); }
-.timeline b { font-family: var(--font-heading); color: var(--red-dark); }
+.timeline li.is-future::before { background: var(--accent); border-color: var(--accent); }
+.timeline b { font-family: var(--font-heading); color: var(--primary-dark); }
 .sources { font-size: 15px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
 
 /* ---- Calendar: dashed placeholder box (remove once the real calendar is in) ---- */
@@ -440,7 +440,7 @@ img { display: block; max-width: 100%; height: auto; }
   background: #fff; display: grid; place-items: center; text-align: center;
   padding: 24px; color: var(--muted); font-size: 18px;
 }
-.calendar-placeholder b { font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+.calendar-placeholder b { font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--primary); }
 .calendar-embed { background: #fff; border-radius: var(--radius); }   /* wrapper for the real embed */
 
 /* ---- Ham Dinner ---- */
@@ -450,7 +450,7 @@ img { display: block; max-width: 100%; height: auto; }
   border-top: 1px solid var(--line);
 }
 .facts li { padding: 12px 0; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
-.facts b { color: var(--red); }
+.facts b { color: var(--primary); }
 .columns--menu { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
 .flyer { display: grid; gap: 8px; }
 .flyer a { display: block; cursor: zoom-in; }
@@ -491,10 +491,10 @@ img { display: block; max-width: 100%; height: auto; }
   .facts, .lists, .pair--map, .pair--photos { grid-template-columns: 1fr; }
 }
 
-/* ---- Give: green band ---- */
-.section--green { background: var(--green); color: #fff; }
-.section--green .container { justify-items: center; text-align: center; }
-.section--green .lead { font-size: 21px; }
+/* ---- Give: accent band ---- */
+.section--accent { background: var(--accent); color: #fff; }
+.section--accent .container { justify-items: center; text-align: center; }
+.section--accent .lead { font-size: 21px; }
 
 /* ---- Contact ---- */
 .contact { display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: start; }

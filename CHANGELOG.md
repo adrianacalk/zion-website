@@ -2,6 +2,11 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v1.2 — 2026-11-24
+- Luther Rose colors: blue `#1f4e8c` (main) and red `#b3202a` (accent).
+- Color variables renamed by role: `--primary`, `--primary-dark`, `--accent`
+  (were `--red`, `--red-dark`, `--green`); `section--green` is now `section--accent`.
+
 ## v1.1 — 2026-11-18
 - Bigger header logo so its text reads better: 100px tall on wide screens, 76px on phones
   (`.logo img` in `css/style.css`). Trimmed the white border off `images/zion-logo-wide.png`.

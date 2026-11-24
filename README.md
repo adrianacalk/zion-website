@@ -109,8 +109,8 @@ The page crops photos to fit their box, so keep the subject near the middle.
 Open `css/style.css`. At the top, under **1. COLORS, FONTS AND SIZES**:
 
 ```css
---red: #b3202a;
---green: #2e6b30;
+--primary: #1f4e8c;
+--accent: #b3202a;
 ```
 
 Change the code after the colon (keep the `;`). Every button, banner and line using

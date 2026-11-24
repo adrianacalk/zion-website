@@ -18,7 +18,7 @@ Change the words; leave the `<tags>` alone. "All pages" means do it in every `.h
 | Change a button's words | that page | `>Plan a Visit</a>` | `>Visit Us</a>` (menu button: **all pages**) |
 | Change a link | that page | `href="https://www.facebook.com/ZionCastrovilleLCMC/"` | `href="https://the-new-address"` |
 | Change the page title Google shows | that page | `<title>Worship \| Zion Lutheran Church, Castroville TX</title>` | `<title>Plan a Visit \| Zion Lutheran Church, Castroville TX</title>` (also the `og:title` and `twitter:title` lines) |
-| Change the main red | `css/style.css` | `--red: #b3202a;` | `--red: #a01c25;` |
+| Change the main blue | `css/style.css` | `--primary: #1f4e8c;` | `--primary: #1a4479;` |
 | Turn on Google Analytics | **all pages** | `G-XXXXXXXXXX` | your ID, e.g. `G-AB12CD34EF` (Replace All) |
 | Put in the calendar | `calendar.html` | the `<div class="calendar-placeholder" ...> ... </div>` block | delete it; paste Planning Center's embed code inside `<div class="calendar-embed"></div>` |
 
