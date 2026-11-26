@@ -142,7 +142,7 @@ https://htmlcolorcodes.com.
 1. In Google Analytics, create a GA4 property and a Web data stream for the site.
    Google gives you a **Measurement ID** that looks like `G-AB12CD34EF`.
 2. In your editor, use **Find & Replace across all files** (Ctrl+Shift+H):
-   find `G-XXXXXXXXXX`, replace with your ID, **Replace All**.
+   find the old ID, replace with the new one, **Replace All**. (Current ID: `G-QFN812B2KW`.)
    Each page has it in 2 places inside the block marked `GOOGLE ANALYTICS`.
 3. Publish. Visits show up in Analytics within a day (Realtime shows them right away).
 
@@ -224,7 +224,6 @@ These are marked in the pages with `<!-- TODO: ... -->` comments. Search for `TO
 - [ ] **Team** (`team.html`): other council members, office staff, interim or supply pastor;
       check that every name listed is still current.
 - [ ] **Sermons** (`sermons.html`, optional): paste a YouTube embed of the newest sermon.
-- [ ] **Google Analytics ID**: replace `G-XXXXXXXXXX` (see above).
 - [ ] **Domain**: confirm the site will live at https://zion-castroville.org (see the note at the top of this file).
 
 Seasonal reminders (not TODOs): the Advent & Christmas 2026 box appears on `index.html`,

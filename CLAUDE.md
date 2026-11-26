@@ -48,4 +48,4 @@ parking, communion note, nursery, Lent/Easter 2027 dates (plan-a-visit.html), yo
 Altar Guild, choir rehearsal times, facility use, Alpha dates, food pantry needs (ministries.html),
 council members, office staff, interim pastor (team.html), optional sermon embed (sermons.html),
 verify Ham Dinner date vs. 2026 flyer, verify rummage sale location caption and map, verify 2026 band name (Joyful Noise),
-schema.org `sameAs` (index.html), Google Analytics ID `G-XXXXXXXXXX`. Giving link: https://zion-castroville.churchcenter.com/giving
+schema.org `sameAs` (index.html). Google Analytics ID is set: `G-QFN812B2KW` (2 places per page). Giving link: https://zion-castroville.churchcenter.com/giving

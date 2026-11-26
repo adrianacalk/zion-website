@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.2 — 2026-11-25
+- Google Analytics turned on: Measurement ID `G-QFN812B2KW` on every page.
+
 ## v2.1 — 2026-11-25
 - Calendar page: Church Center calendar embed in place of the placeholder (Adriana).
 - Rummage Sale: building is on London Street, across from the sanctuary (Adriana).

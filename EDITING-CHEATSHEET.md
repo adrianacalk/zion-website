@@ -20,7 +20,7 @@ Change the words; leave the `<tags>` alone. "All pages" means do it in every `.h
 | Change a link | that page | `href="https://www.facebook.com/ZionCastrovilleLCMC/"` | `href="https://the-new-address"` |
 | Change the page title Google shows | that page | `<title>Sermons \| Zion Lutheran Church, Castroville TX</title>` | `<title>Watch Sermons \| Zion Lutheran Church, Castroville TX</title>` (also the `og:title` and `twitter:title` lines) |
 | Change the main blue | `css/style.css` | `--primary: #1f4e8c;` | `--primary: #1a4479;` |
-| Turn on Google Analytics | **all pages** | `G-XXXXXXXXXX` | your ID, e.g. `G-AB12CD34EF` (Replace All) |
+| Change the Google Analytics ID | **all pages** | `G-QFN812B2KW` | the new ID (Replace All) |
 | Add a team member | `team.html` | `<li><b>Music Director</b>Pete Martinez</li>` | add a new line under it: `<li><b>Treasurer</b>Jane Doe</li>` (real name) |
 | Fill in parking | `plan-a-visit.html` | `<p>Parking details are coming soon. Call the office if you need help getting in.</p>` | `<p>(where to park, in one or two short sentences)</p>` and delete the TODO comment above it |
 | Add a ministry section | `ministries.html` | copy a whole `<section class="section" id="alpha">` ... `</section>` block | paste it, change the `id`, heading and words; add `<a href="#new-id">Name</a>` to the jump list at the top |
