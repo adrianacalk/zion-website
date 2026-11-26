@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.4 — 2026-11-25
+- Calendar page: "Add to iPhone or Outlook" and "Add to Google Calendar" buttons (Planning Center share link).
+
 ## v2.3 — 2026-11-25
 - VBS page: new middle and right photos (`images/vbs-sanctuary.jpg`, `images/vbs-campfire-singers.jpg`).
 
