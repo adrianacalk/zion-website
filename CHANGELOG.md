@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.5 — 2026-11-26
+- Footer "Follow us": added Instagram, YouTube and Church Center links on every page.
+
 ## v2.4 — 2026-11-25
 - Calendar page: "Add to iPhone or Outlook" and "Add to Google Calendar" buttons (Planning Center share link).
 
