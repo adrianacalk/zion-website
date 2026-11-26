@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.7 — 2026-11-26
+- Ministries > Facilities: youth building now also named as the historic George L. Haass Store (about 1850).
+
 ## v2.6 — 2026-11-26
 - Ministries: new "Baptisms, Weddings & Funerals" section (id life-events) above Cemetery, with jump-list link. Cream/white backgrounds after it re-alternated.
 
