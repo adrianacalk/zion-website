@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.6 — 2026-11-26
+- Ministries: new "Baptisms, Weddings & Funerals" section (id life-events) above Cemetery, with jump-list link. Cream/white backgrounds after it re-alternated.
+
 ## v2.5 — 2026-11-26
 - Footer "Follow us": added Instagram, YouTube and Church Center links on every page.
 
