@@ -27,7 +27,7 @@ VS Code or Cursor), change, save, and look at in your web browser.
 | `faith.html` | About > Faith (mission, statement of faith, LCMC) |
 | `history.html` | About > History (stone church, timeline, today, sources) |
 | `sermons.html` | About > Sermons (YouTube and Facebook Live links) |
-| `calendar.html` | Events > Calendar (placeholder for the Church Center calendar) |
+| `calendar.html` | Events > Calendar (Church Center calendar embed) |
 | `vbs.html` | Events > Vacation Bible School |
 | `ham-dinner.html` | Events > Ham Dinner Sunday |
 | `rummage-sale.html` | Events > Rummage Sale |
@@ -213,13 +213,8 @@ These are marked in the pages with `<!-- TODO: ... -->` comments. Search for `TO
 - [ ] **VBS registration link** (`vbs.html`): the "Register for VBS" button has `href="#"`.
       Paste the Planning Center (Church Center) Registrations signup link in its place.
       Also confirm the 2027 dates and the 9 am to 1 pm time (the old site said "TBD").
-- [ ] **Church Center calendar** (`calendar.html`): replace the dashed placeholder box with the
-      Planning Center embed code (instructions are in the comment right above the box).
 - [ ] **Verify the Ham Dinner date** (`ham-dinner.html`): check the 2026 date against the 2026 flyer,
       and fill in the October 2027 date when it is set.
-- [ ] **Verify the rummage sale location** (`rummage-sale.html`): the text says the building is
-      "across London Street from the church"; the storefront photo's description says
-      "on Fiorella Street". Confirm, and check the arrow on `images/rummage-map.jpg`.
 - [ ] **Verify the band name** (`ham-dinner.html`): "2026: the Joyful Noise band".
 - [ ] **Social links for Google** (`index.html`): optional "sameAs" line in the schema.org block (see its comment).
 - [ ] **Plan a Visit details** (`plan-a-visit.html`): parking and accessible entrance; optional

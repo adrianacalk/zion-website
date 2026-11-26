@@ -2,6 +2,12 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.1 — 2026-11-25
+- Calendar page: Church Center calendar embed in place of the placeholder (Adriana).
+- Rummage Sale: building is on London Street, across from the sanctuary (Adriana).
+- Rummage Sale: Church Center list of upcoming shopping days (Rummage Sale category only),
+  with the Facebook button kept below it for last-minute changes.
+
 ## v2.0 — 2026-11-24
 - New menu: Home · Plan a Visit · Ministries · About ▾ (Team, Faith, History, Sermons) ·
   Events ▾ (Calendar, VBS, Ham Dinner, Rummage Sale) · Give. The separate "Plan a Visit"
