@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.3 — 2026-11-25
+- VBS page: new middle and right photos (`images/vbs-sanctuary.jpg`, `images/vbs-campfire-singers.jpg`).
+
 ## v2.2 — 2026-11-25
 - Google Analytics turned on: Measurement ID `G-QFN812B2KW` on every page.
 
