@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.8 — 2026-11-26
+- Rummage Sale: location now names the youth building, the historic George L. Haass Store (text and storefront photo alt).
+
 ## v2.7 — 2026-11-26
 - Ministries > Facilities: youth building now also named as the historic George L. Haass Store (about 1850).
 
