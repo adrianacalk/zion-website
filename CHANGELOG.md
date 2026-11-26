@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.9 — 2026-11-26
+- All buttons are solid blue (.btn) for consistency. The outline, ghost and light classes stay in the CSS for a later version.
+
 ## v2.8 — 2026-11-26
 - Rummage Sale: location now names the youth building, the historic George L. Haass Store (text and storefront photo alt).
 
