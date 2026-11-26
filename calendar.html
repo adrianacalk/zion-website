@@ -101,7 +101,7 @@
         <div class="container">
 
           <!-- ===== INTRO ===== -->
-          <p class="lead">Our calendar updates from Planning Center.</p>
+          <p class="lead">Our calendar updates from <a href="https://zion-castroville.churchcenter.com/calendar?view=list" target="_blank" rel="noopener">Church Center</a>.</p>
 
           <!-- ===== SEASONAL NOTE (update or remove after Christmas) ===== -->
           <div class="highlight">
@@ -109,16 +109,12 @@
           </div>
 
           <!-- ===== CALENDAR ===== -->
-          <!-- TODO: Church Center calendar embed.
-               1. In Planning Center, go to Calendar > Church Center > Embed
-                  (pick Month or List view) and copy the embed code it gives you.
-               2. Delete the whole <div class="calendar-placeholder"> ... </div> below.
-               3. Paste the embed code inside the empty <div class="calendar-embed"></div>.
-               Only events published to Church Center will show. -->
-          <div class="calendar-embed"></div>
-          <div class="calendar-placeholder" role="note" aria-label="Calendar placeholder">
-            <p><b>Placeholder</b><br>Church Center calendar goes here</p>
+          <div class="calendar-embed">
+            <script src="https://zion-castroville.churchcenter.com/assets/calendar_embed.js" data-show-filter="true" data-height="auto"></script>
           </div>
+          <!--<div class="calendar-placeholder" role="note" aria-label="Calendar placeholder">
+            <p><b>Placeholder</b><br>Church Center calendar goes here</p>
+          </div>-->
 
         </div>
       </section>
