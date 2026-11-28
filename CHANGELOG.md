@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.6 — 2026-11-28
+- Ministries > Fellowship: new photo images/fellowship-kitchen.jpg (replaces the quilt photo there; quilt.jpg kept in images/).
+
 ## v3.5 — 2026-11-28
 - Footer Connect column on every page: removed the "Give online" link (Give stays in the menu).
 
