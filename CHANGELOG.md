@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.11 — 2026-11-27
+- Footer on every page: Sunday schedule removed (now three columns), heading "Zion Lutheran", "Follow us" renamed "Connect", Love INC Medina Region link added.
+
 ## v2.10 — 2026-11-27
 - Ministries: new "Love INC" section (id love-inc) after Food Pantry, with jump-list link. Missions Grant background now cream.
 
