@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.5 — 2026-11-28
+- Footer Connect column on every page: removed the "Give online" link (Give stays in the menu).
+
 ## v3.4 — 2026-11-28
 - Youth Sunday School now 8:45 to 9:45 am everywhere (Home, Plan a Visit, Ministries).
 
