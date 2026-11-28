@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v2.10 — 2026-11-27
+- Ministries: new "Love INC" section (id love-inc) after Food Pantry, with jump-list link. Missions Grant background now cream.
+
 ## v2.9 — 2026-11-26
 - All buttons are solid blue (.btn) for consistency. The outline, ghost and light classes stay in the CSS for a later version.
 
