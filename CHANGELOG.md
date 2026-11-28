@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.9 — 2026-11-28
+- Sermons: "Sermons by pastor" list linking each pastor's YouTube playlist, plus the Live Church Services playlist.
+
 ## v3.8 — 2026-11-28
 - Ministries > Choirs: new bell choir photo images/bell-choir-practice.jpg (cropped to the top of her portrait photo); bell-choir.jpg kept in images/.
 
