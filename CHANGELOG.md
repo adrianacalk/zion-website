@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.8 — 2026-11-28
+- Ministries > Choirs: new bell choir photo images/bell-choir-practice.jpg (cropped to the top of her portrait photo); bell-choir.jpg kept in images/.
+
 ## v3.7 — 2026-11-28
 - Ministries > Youth: new photo images/sunday-school-class.jpg (children with their teachers); sunday-school-kids.jpg kept in images/.
 
