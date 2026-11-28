@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.7 — 2026-11-28
+- Ministries > Youth: new photo images/sunday-school-class.jpg (children with their teachers); sunday-school-kids.jpg kept in images/.
+
 ## v3.6 — 2026-11-28
 - Fellowship photo alt text now names the Ham Dinner potato salad prep.
 - Ministries > Fellowship: new photo images/fellowship-kitchen.jpg (replaces the quilt photo there; quilt.jpg kept in images/).
