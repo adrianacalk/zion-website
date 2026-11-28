@@ -3,6 +3,7 @@
 Newest changes at the top. One line per change is plenty.
 
 ## v3.6 — 2026-11-28
+- Fellowship photo alt text now names the Ham Dinner potato salad prep.
 - Ministries > Fellowship: new photo images/fellowship-kitchen.jpg (replaces the quilt photo there; quilt.jpg kept in images/).
 
 ## v3.5 — 2026-11-28
