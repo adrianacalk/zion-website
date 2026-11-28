@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.1 — 2026-11-27
+- Feature boxes (Home and Give): the thin top stripe is red on every box instead of alternating blue and red.
+
 ## v3.0 — 2026-11-27
 - Homepage rewritten for search and three audiences (members, new neighbors, history visitors): new title and description, hero "Zion Lutheran" with "Worshiping together in historic Castroville since 1852", "Find your way in" boxes, "Happening at Zion" 2 by 2 (Advent, 175th, Rummage Sale, Fiorella Friday; Ham Dinner dropped), "Lutheran roots. Timeless liturgy." about section, schema sameAs links. New CSS class .features--two.
 

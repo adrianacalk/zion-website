@@ -356,11 +356,10 @@ img { display: block; max-width: 100%; height: auto; }
 /* ---- Feature boxes (Home highlights, Give funds) ---- */
 .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 .feature {
-  background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--primary);
+  background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--accent);   /* red top on every box */
   border-radius: var(--radius); padding: 22px 22px 14px;
   display: grid; gap: 12px; align-content: start; grid-template-rows: auto auto 1fr;
 }
-.feature:nth-child(2) { border-top-color: var(--accent); }   /* middle box gets a red top */
 .feature__eyebrow { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .feature .links { align-self: end; }
 .features--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }   /* Home "Happening" boxes: 2 by 2 */
