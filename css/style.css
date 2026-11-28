@@ -521,6 +521,12 @@ img { display: block; max-width: 100%; height: auto; }
   .contact dd { margin-bottom: 10px; }
 }
 
+/* ---- Video and map embeds (Call page) ---- */
+.video-embed, .map-embed { margin: 28px 0; }
+.video-embed iframe { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; }
+.map-embed iframe { display: block; width: 100%; height: 480px; border: 0; }
+@media (max-width: 640px) { .map-embed iframe { height: 360px; } }
+
 
 /* =====================================================================
    10. FOOTER

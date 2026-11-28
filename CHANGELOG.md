@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.2 — 2026-11-28
+- New temporary page call.html (Call to Pastoral Ministry), copied from the old site. Not in the menu; the pastor-search notices on Home and Team link to it. Added to sitemap. New _redirects file sends the old /call-page/ address to it. New CSS for video and map embeds.
+
 ## v3.1 — 2026-11-27
 - Feature boxes (Home and Give): the thin top stripe is red on every box instead of alternating blue and red.
 

@@ -1,0 +1,2 @@
+# Netlify redirects: old site addresses to new pages
+/call-page/  /call.html  301
