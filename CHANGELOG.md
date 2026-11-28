@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.10 — 2026-11-28
+- Team: Visiting Pastors names link to their YouTube sermon playlists. Sermons: removed the Live Church Services link.
+
 ## v3.9 — 2026-11-28
 - Sermons: "Sermons by pastor" list linking each pastor's YouTube playlist, plus the Live Church Services playlist.
 
