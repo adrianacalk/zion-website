@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- ===== PAGE TITLE AND SEARCH ENGINE DESCRIPTION (different on each page) ===== -->
-    <title>Zion Lutheran Church, Castroville TX | Worshiping together since 1852</title>
-    <meta name="description" content="Zion Lutheran Church in Castroville, Texas, worshiping together since 1852. Sunday worship at 10 am with Holy Communion at 1106 Fiorella St.">
+    <title>Zion Lutheran Church | Lutheran Church in Castroville, TX since 1852</title>
+    <meta name="description" content="Worshiping together in historic Castroville, Texas, since 1852. Lutheran roots and timeless liturgy. Sunday worship 10 am at 1106 Fiorella St.">
     <link rel="canonical" href="https://zion-castroville.org/">
 
     <!-- ===== SHARING PREVIEW (Facebook, texts, X/Twitter) ===== -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Zion Lutheran Church">
-    <meta property="og:title" content="Zion Lutheran Church, Castroville TX | Worshiping together since 1852">
-    <meta property="og:description" content="Zion Lutheran Church in Castroville, Texas, worshiping together since 1852. Sunday worship at 10 am with Holy Communion at 1106 Fiorella St.">
+    <meta property="og:title" content="Zion Lutheran Church | Lutheran Church in Castroville, TX since 1852">
+    <meta property="og:description" content="Worshiping together in historic Castroville, Texas, since 1852. Lutheran roots and timeless liturgy. Sunday worship 10 am at 1106 Fiorella St.">
     <meta property="og:url" content="https://zion-castroville.org/">
     <meta property="og:image" content="https://zion-castroville.org/images/hero-steeple.jpg">
     <meta property="og:image:alt" content="Zion's steeple against a dappled sky">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Zion Lutheran Church, Castroville TX | Worshiping together since 1852">
-    <meta name="twitter:description" content="Zion Lutheran Church in Castroville, Texas, worshiping together since 1852. Sunday worship at 10 am with Holy Communion at 1106 Fiorella St.">
+    <meta name="twitter:title" content="Zion Lutheran Church | Lutheran Church in Castroville, TX since 1852">
+    <meta name="twitter:description" content="Worshiping together in historic Castroville, Texas, since 1852. Lutheran roots and timeless liturgy. Sunday worship 10 am at 1106 Fiorella St.">
     <meta name="twitter:image" content="https://zion-castroville.org/images/hero-steeple.jpg">
 
     <!-- ===== ICON IN THE BROWSER TAB ===== -->
@@ -44,9 +44,7 @@
     <!-- ===== SEARCH ENGINE INFO (schema.org) =====
          Tells Google the church's name, address, phone and Sunday worship time.
          Keep it in step with the Contact page if any of these change.
-         TODO: add the church's social pages as a "sameAs" line, for example:
-           "sameAs": ["https://www.facebook.com/ZionCastrovilleLCMC/"],
-         (put it right after the "email" line, with a comma at the end). -->
+         The "sameAs" list is the church's social pages; Google uses it to connect them to this site. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -57,6 +55,11 @@
       "image": "https://zion-castroville.org/images/hero-steeple.jpg",
       "telephone": "+1-830-538-6335",
       "email": "office@zion-castroville.org",
+      "sameAs": [
+        "https://www.facebook.com/ZionCastrovilleLCMC/",
+        "https://www.instagram.com/zion.castroville/",
+        "https://www.youtube.com/@zionlutheranchurchcastroville1"
+      ],
       "foundingDate": "1852-01-29",
       "address": {
         "@type": "PostalAddress",
@@ -128,15 +131,17 @@
     <!-- ===== END HEADER ===== -->
 
     <!-- ===== MAIN CONTENT (this part is different on each page) ===== -->
+    <!-- Homepage v3.0 (2026-11-27): say who and where in the first screen,
+         send each kind of visitor one click deeper, and give Google plain text to read. -->
     <main id="main">
 
       <!-- ===== HERO: big steeple photo with the church name ===== -->
       <section class="hero" aria-label="Welcome">
-        <img class="hero__photo" src="images/hero-steeple.jpg" alt="Zion's steeple against a dappled sky" width="1280" height="783">
+        <img class="hero__photo" src="images/hero-steeple.jpg" alt="The steeple of Zion Lutheran Church in Castroville, Texas" width="1280" height="783" fetchpriority="high">
         <div class="hero__content">
-          <h1>Zion Lutheran Church</h1>
-          <p class="hero__subtitle">Castroville, Texas &middot; Worshiping together since 1852</p>
-          <p class="hero__pill">Sunday worship 10 am with Holy Communion</p>
+          <h1>Zion Lutheran</h1>
+          <p class="hero__subtitle">Worshiping together in historic Castroville since 1852</p>
+          <p class="hero__pill">Sunday worship 10 am with Holy Communion &middot; All are welcome</p>
           <div class="buttons">
             <a class="btn" href="plan-a-visit.html">Plan a Visit</a>
             <a class="btn" href="https://www.facebook.com/ZionCastrovilleLCMC/" target="_blank" rel="noopener">Watch on Facebook Live</a>
@@ -144,10 +149,50 @@
         </div>
       </section>
 
+      <!-- ===== FIND YOUR WAY: one box per kind of visitor (new neighbors, members, history lovers) ===== -->
+      <section class="section section--cream" aria-labelledby="find-your-way">
+        <div class="container">
+          <h2 id="find-your-way">Find your way in</h2>
+          <div class="features">
+
+            <!-- Box 1: New to Castroville -->
+            <article class="feature">
+              <p class="feature__eyebrow">New to the area?</p>
+              <div class="stack">
+                <h3>Visit us on Sunday</h3>
+                <p>Come as you are. Worship starts at 10 am, with Sunday School for kids at 9. We'd love to meet you.</p>
+              </div>
+              <p class="links"><a class="more-link" href="plan-a-visit.html">What to expect &rarr;</a><a class="more-link" href="ministries.html#youth">Kids and youth &rarr;</a></p>
+            </article>
+
+            <!-- Box 2: Members -->
+            <article class="feature">
+              <p class="feature__eyebrow">Members</p>
+              <div class="stack">
+                <h3>This week at Zion</h3>
+                <p>Check the calendar, catch up on a sermon, sign up in Church Center, or give online.</p>
+              </div>
+              <p class="links"><a class="more-link" href="calendar.html">Calendar &rarr;</a><a class="more-link" href="sermons.html">Sermons &rarr;</a><a class="more-link" href="give.html">Give &rarr;</a></p>
+            </article>
+
+            <!-- Box 3: History lovers and visitors -->
+            <article class="feature">
+              <p class="feature__eyebrow">Exploring Castroville?</p>
+              <div class="stack">
+                <h3>175 years of history</h3>
+                <p>Founded by German settlers in Henri Castro's colony in 1852. Our 1853 stone church is believed to be the first Lutheran church in Texas built of stone.</p>
+              </div>
+              <p class="links"><a class="more-link" href="history.html">Our history &rarr;</a><a class="more-link" href="ministries.html#cemetery">Zion Cemetery &rarr;</a></p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
       <!-- ===== WELCOME STRIP: Sunday times (accent band) ===== -->
       <section class="welcome-strip" aria-label="Sunday times">
         <div class="container">
-          <h2>Welcome<small>Join us Sunday at 1106 Fiorella St.</small></h2>
+          <h2>Sundays at Zion<small>1106 Fiorella St, Castroville, TX 78009</small></h2>
           <ul class="welcome-strip__times">
             <li><b>8:45 am</b>Adult Bible Study</li>
             <li><b>9 to 9:45 am</b>Sunday School, September to May</li>
@@ -156,10 +201,11 @@
         </div>
       </section>
 
-      <!-- ===== HIGHLIGHTS: three feature boxes ===== -->
-      <section class="section section--cream" aria-label="Highlights">
+      <!-- ===== HAPPENING AT ZION: seasonal boxes (update after Christmas) ===== -->
+      <section class="section" aria-labelledby="happening">
         <div class="container">
-          <div class="features">
+          <h2 id="happening">Happening at Zion</h2>
+          <div class="features features--two">
 
             <!-- Box 1: Upcoming (seasonal: update after Christmas) -->
             <article class="feature">
@@ -171,26 +217,54 @@
               <p class="links"><a class="more-link" href="calendar.html">See the full schedule &rarr;</a></p>
             </article>
 
-            <!-- Box 2: Ham Dinner and Rummage Sale -->
+            <!-- Box 2: Zion turns 175 -->
             <article class="feature">
-              <p class="feature__eyebrow">Every October</p>
+              <p class="feature__eyebrow">January 29, 2027</p>
               <div class="stack">
-                <h3>Ham Dinner &amp; Rummage Sale</h3>
-                <p>Zion's biggest day of the year: worship at 10 am, then a German-style Ham Dinner. Our Rummage Sale is open through September up to the Ham Dinner.</p>
+                <h3>Zion turns 175</h3>
+                <p>Zion was organized January 29, 1852, with 12 charter members. Join us as we celebrate 175 years in Castroville.</p>
               </div>
-              <p class="links"><a class="more-link" href="ham-dinner.html">Ham Dinner &rarr;</a><a class="more-link" href="rummage-sale.html">Rummage Sale &rarr;</a></p>
+              <p class="links"><a class="more-link" href="history.html">Our history &rarr;</a></p>
             </article>
 
-            <!-- Box 3: 175th anniversary -->
+            <!-- Box 3: Rummage Sale (no regular schedule; dates come from the Church Center list) -->
             <article class="feature">
-              <p class="feature__eyebrow">175 years</p>
+              <p class="feature__eyebrow">Shop and donate</p>
               <div class="stack">
-                <h3>175 years in Castroville</h3>
-                <p>Zion was organized January 29, 1852, and celebrates its 175th anniversary on January 29, 2027.</p>
+                <h3>Rummage Sale</h3>
+                <p>Bargains for Castroville and the surrounding area, in the historic George L. Haass Store on London Street, across from the sanctuary. Shopping days vary, so check before you come.</p>
               </div>
-              <p class="links"><a class="more-link" href="history.html">Read our history &rarr;</a></p>
+              <p class="links"><a class="more-link" href="rummage-sale.html">Upcoming shopping days &rarr;</a></p>
             </article>
 
+            <!-- Box 4: Fiorella Friday (city event, usually the first Friday of the month, 6 to 9 pm). What Zion does varies. -->
+            <article class="feature">
+              <p class="feature__eyebrow">On Fiorella Street</p>
+              <div class="stack">
+                <h3>Fiorella Friday</h3>
+                <p>Most months on the first Friday evening, Fiorella Street closes to cars for shopping, food and music. We're right on Fiorella, so stop by and visit. Some months the rummage sale is open; others, we're sharing what's coming up at Zion.</p>
+              </div>
+              <p class="links"><a class="more-link" href="calendar.html">Our calendar &rarr;</a><a class="more-link" href="https://www.facebook.com/profile.php?id=100065105936553" target="_blank" rel="noopener">Fiorella Friday on Facebook &rarr;</a></p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ABOUT ZION: short plain-text intro (helps Google understand who we are) ===== -->
+      <section class="section section--cream" aria-labelledby="about-zion">
+        <div class="container">
+          <div class="columns columns--photo-right">
+            <figure class="photo photo--wide">
+              <img src="images/church-1952.jpg" alt="Zion Lutheran Church in Castroville in 1952, black and white" width="887" height="590" loading="lazy">
+              <figcaption>Zion in 1952</figcaption>
+            </figure>
+            <div class="columns__text">
+              <h2 id="about-zion">Lutheran roots. Timeless liturgy.</h2>
+              <p>We honor our Lutheran heritage and the historic liturgy: hymns, creeds, Scripture read and preached, and Holy Communion every Sunday.</p>
+              <p>Zion is a member of LCMC, in Castroville just west of San Antonio. Our 1939 brick church stands on Fiorella Street, on the same lot as the first stone church. Families from Castroville and Medina County gather here for worship, Sunday School, choirs, Bible study and service to our neighbors.</p>
+              <p class="links"><a class="more-link" href="faith.html">What we believe &rarr;</a><a class="more-link" href="ministries.html">Ministries &rarr;</a></p>
+            </div>
           </div>
         </div>
       </section>

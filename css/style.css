@@ -363,6 +363,7 @@ img { display: block; max-width: 100%; height: auto; }
 .feature:nth-child(2) { border-top-color: var(--accent); }   /* middle box gets a red top */
 .feature__eyebrow { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .feature .links { align-self: end; }
+.features--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }   /* Home "Happening" boxes: 2 by 2 */
 @media (max-width: 860px) { .features { grid-template-columns: 1fr; } }
 
 /* ---- Slim centered notice (pastor search) ---- */
