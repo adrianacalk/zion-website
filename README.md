@@ -231,9 +231,6 @@ Last updated 2026-11-28.
       bookmarked (`/rummage/`, `/ham-dinner/`, `/vbs-page/`, `/history-page/` and so on).
 
 **Content**
-- [ ] **Sunday School time**: Plan a Visit now says classes are 8:45 to 9:45 am (Children and youth section),
-      but the Sunday list on `plan-a-visit.html` and `index.html`, and `ministries.html`, still say 9 to 9:45 am.
-      Pick one and make them match.
 - [ ] **VBS registration link** (`vbs.html`): the "Register for VBS" button has `href="#"`.
       Paste the Church Center Registrations signup link. Also confirm the 2027 dates (July 6–8) and 9 am to 1 pm.
 - [ ] **Ham Dinner date** (`ham-dinner.html`): check the 2026 date against the 2026 flyer,

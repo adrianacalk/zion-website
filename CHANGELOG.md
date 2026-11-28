@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.4 — 2026-11-28
+- Youth Sunday School now 8:45 to 9:45 am everywhere (Home, Plan a Visit, Ministries).
+
 ## v3.3 — 2026-11-28
 - Docs only: README (file list, Live Server preview for videos and maps, Netlify plan, Still to do), CLAUDE.md and Cursor rules (call.html, _redirects, open items), cheat sheet (removed done items, pastor notice and redirect rows).
 
