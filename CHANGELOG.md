@@ -2,6 +2,9 @@
 
 Newest changes at the top. One line per change is plenty.
 
+## v3.3 — 2026-11-28
+- Docs only: README (file list, Live Server preview for videos and maps, Netlify plan, Still to do), CLAUDE.md and Cursor rules (call.html, _redirects, open items), cheat sheet (removed done items, pastor notice and redirect rows).
+
 ## v3.2 — 2026-11-28
 - New temporary page call.html (Call to Pastoral Ministry), copied from the old site. Not in the menu; the pastor-search notices on Home and Team link to it. Added to sitemap. New _redirects file sends the old /call-page/ address to it. New CSS for video and map embeds.
 

@@ -20,9 +20,9 @@ VS Code or Cursor), change, save, and look at in your web browser.
 
 | File | What it is |
 |---|---|
-| `index.html` | Home page (steeple photo, Sunday times, three highlight boxes, pastor search notice) |
+| `index.html` | Home page (steeple photo, Sundays at Zion, "Find your way in" boxes, "Happening at Zion" boxes, Lutheran roots section, pastor search notice) |
 | `plan-a-visit.html` | Plan a Visit: Sunday schedule, map, parking, worship style, children, livestream, sermons, Advent & Christmas, Lent & Easter, office contact. Jump list at the top. |
-| `ministries.html` | Ministries: youth, adult Sunday School, Ladies' Bible Study, fellowship, Altar Guild, choirs, facilities, cemetery, library, Alpha, food pantry, missions grant. Jump list at the top. |
+| `ministries.html` | Ministries: youth, adult Sunday School, Ladies' Bible Study, fellowship, Altar Guild, choirs, facilities, baptisms/weddings/funerals, cemetery, library, Alpha, food pantry, Love INC, missions grant. Jump list at the top. |
 | `team.html` | About > Team (pastor search, ministry team, office) |
 | `faith.html` | About > Faith (mission, statement of faith, LCMC) |
 | `history.html` | About > History (stone church, timeline, today, sources) |
@@ -32,6 +32,7 @@ VS Code or Cursor), change, save, and look at in your web browser.
 | `ham-dinner.html` | Events > Ham Dinner Sunday |
 | `rummage-sale.html` | Events > Rummage Sale |
 | `give.html` | Give (Church Center giving link, funds) |
+| `call.html` | Call to Pastoral Ministry (temporary, during the pastor search). Not in the menu; the pastor search notices on Home and Team link to it. |
 | `404.html` | "Page not found" page the web host shows for a wrong address |
 | `css/style.css` | The one stylesheet: all colors, fonts, spacing and layout. Colors are at the very top. |
 | `js/main.js` | A few lines of JavaScript: opens the phone menu and the drop-downs, and sets the footer year. |
@@ -39,8 +40,9 @@ VS Code or Cursor), change, save, and look at in your web browser.
 | `docs/` | Files people can download (the missions grant application PDF). |
 | `sitemap.xml` | List of pages for Google. Add a line if you add a page. |
 | `robots.txt` | Tells search engines they may read the whole site. |
+| `_redirects` | Netlify only: sends old-site addresses to the new pages (for now, `/call-page/` to `call.html`). |
 | `EDITING-CHEATSHEET.md` | One page of common edits with exact examples. |
-| `CLAUDE.md`, `.cursor/rules/zion-site.mdc` | Instructions for AI helpers (Claude, Cursor). Same text in both. |
+| `CLAUDE.md`, `.cursor/rules/zion-site.mdc` | Instructions for AI helpers (Claude, Cursor, VS Code Copilot). Same text in both. |
 | `CHANGELOG.md` | A short diary of what changed and when. |
 | `.gitignore` | Tells git which junk files to ignore. |
 
@@ -68,11 +70,11 @@ Every page has the same four parts, marked with big comments so you can find the
 <head>              title, description, sharing preview, fonts, Google Analytics
 HEADER              logo and menu            (identical on every page)
 MAIN CONTENT        the part that is different on each page
-FOOTER              address, contact, Sunday times (identical on every page)
+FOOTER              address, contact, Connect links (identical on every page)
 ```
 
 **The header and footer are copied into every page.** If you change one
-(say, new office hours in the footer), make the same change in all 13 `.html`
+(say, new office hours in the footer), make the same change in all 14 `.html`
 files. Find & Replace across files (VS Code / Cursor: Ctrl+Shift+H, Mac Cmd+Shift+H)
 makes that quick.
 
@@ -84,6 +86,11 @@ Double-click `index.html`. It opens in your web browser and every link and photo
 After you edit and save a file, press Refresh (F5, or Cmd+R on a Mac) in the browser.
 
 (`404.html` looks plain when opened this way. That's expected; it is styled once it is online.)
+
+**YouTube videos and Google maps** (on `call.html`) show "Error 153" or stay blank when the file is
+opened by double-clicking. They need a real web address. In VS Code, install the **Live Server**
+(or **Live Preview**) extension, right-click `index.html` > **Open with Live Server**, and the site opens at
+`http://127.0.0.1:5500/` with everything working. It also refreshes the browser each time you save.
 
 ---
 
@@ -146,8 +153,6 @@ https://htmlcolorcodes.com.
    Each page has it in 2 places inside the block marked `GOOGLE ANALYTICS`.
 3. Publish. Visits show up in Analytics within a day (Realtime shows them right away).
 
-Until you do this, the placeholder does nothing harmful.
-
 ---
 
 ## Publish the site
@@ -161,12 +166,18 @@ Until you do this, the placeholder does nothing harmful.
 5. To use zion-castroville.org: Netlify > **Domain management** > Add a domain, and follow its
    instructions for where the domain is registered.
 
-### Option B: GitHub → Netlify (updates publish automatically)
+### Option B: GitHub → Netlify (updates publish automatically) — the plan for Zion
 
 1. Put the folder on GitHub (see "Git basics" below).
 2. In Netlify: **Add new site > Import an existing project > GitHub**, pick the repository.
 3. Build command: leave **empty**. Publish directory: `.` (a single dot, the top folder).
 4. From then on, every change you push to GitHub goes live within a minute.
+   So preview locally (Live Server) **before** you push.
+
+Zion's setup (2026): the Netlify account belongs to the church admin account, not a personal one.
+The repository is https://github.com/adrianacalk/zion-website. The domain zion-castroville.org is
+registered at Network Solutions (log in from the church office). When switching the domain, change only
+the website records (`@` and `www`). **Leave the MX records alone**: they carry the church's Google email.
 
 ---
 
@@ -209,23 +220,37 @@ git push
 ## Still to do
 
 These are marked in the pages with `<!-- TODO: ... -->` comments. Search for `TODO` to find them.
+Last updated 2026-11-28.
 
+**Launch**
+- [ ] **Netlify**: create the account under the church admin account, import the GitHub repository
+      (Option B above), check the site at its `netlify.app` address.
+- [ ] **Domain**: point zion-castroville.org at Netlify from Network Solutions (website records only, not MX).
+- [ ] **Google Search Console**: add the site, verify it, submit `https://zion-castroville.org/sitemap.xml`.
+- [ ] **Old addresses** (optional): add more lines to `_redirects` for old-site pages people may have
+      bookmarked (`/rummage/`, `/ham-dinner/`, `/vbs-page/`, `/history-page/` and so on).
+
+**Content**
+- [ ] **Sunday School time**: Plan a Visit now says classes are 8:45 to 9:45 am (Children and youth section),
+      but the Sunday list on `plan-a-visit.html` and `index.html`, and `ministries.html`, still say 9 to 9:45 am.
+      Pick one and make them match.
 - [ ] **VBS registration link** (`vbs.html`): the "Register for VBS" button has `href="#"`.
-      Paste the Planning Center (Church Center) Registrations signup link in its place.
-      Also confirm the 2027 dates and the 9 am to 1 pm time (the old site said "TBD").
-- [ ] **Verify the Ham Dinner date** (`ham-dinner.html`): check the 2026 date against the 2026 flyer,
+      Paste the Church Center Registrations signup link. Also confirm the 2027 dates (July 6–8) and 9 am to 1 pm.
+- [ ] **Ham Dinner date** (`ham-dinner.html`): check the 2026 date against the 2026 flyer,
       and fill in the October 2027 date when it is set.
-- [ ] **Verify the band name** (`ham-dinner.html`): "2026: the Joyful Noise band".
-- [ ] **Social links for Google** (`index.html`): optional "sameAs" line in the schema.org block (see its comment).
-- [ ] **Plan a Visit details** (`plan-a-visit.html`): parking and accessible entrance; optional
-      Communion and first-visit note; nursery or quiet room; 2027 Lent and Easter dates.
+- [ ] **Band name** (`ham-dinner.html`): "2026: the Joyful Noise band".
+- [ ] **Lent and Easter 2027 dates** (`plan-a-visit.html`).
 - [ ] **Ministries details** (`ministries.html`): youth group (if any); Ladies' Bible Study; Altar Guild;
-      choir rehearsal times; whether facilities can be used or rented; next Alpha; food pantry needs.
-- [ ] **Team** (`team.html`): other council members, office staff, interim or supply pastor;
+      next Alpha (optional); food pantry needs (optional); how members can volunteer with Love INC (optional).
+- [ ] **Team** (`team.html`): who leads worship during the pastor search; other council members and office staff;
       check that every name listed is still current.
 - [ ] **Sermons** (`sermons.html`, optional): paste a YouTube embed of the newest sermon.
-- [ ] **Domain**: confirm the site will live at https://zion-castroville.org (see the note at the top of this file).
+
+**Done recently:** Church Center calendar embed, Google Analytics, social links for Google (schema sameAs),
+rummage sale location, parking, worship style and Communion note, nursery/quiet room, Call page.
 
 Seasonal reminders (not TODOs): the Advent & Christmas 2026 box appears on `index.html`,
-`calendar.html` and `plan-a-visit.html`; update or remove it after Christmas. The pastor search
-notice is on `index.html` and `team.html`. Update the Lent & Easter dates on `plan-a-visit.html` each year.
+`calendar.html` and `plan-a-visit.html`; update or remove it after Christmas. The 175th anniversary box on
+`index.html` can come down after January 2027. When the pastor call is filled, remove the pastor search notices
+on `index.html` and `team.html`, delete `call.html`, and take its line out of `sitemap.xml` and `_redirects`.
+Update the Lent & Easter dates on `plan-a-visit.html` each year.
